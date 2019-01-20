@@ -7,6 +7,8 @@ import replyIcon from '@/assets/icon/reply.svg'
 import settingIcon from '@/assets/icon/setting.svg'
 import { mapGetters, mapState, mapActions } from 'vuex'
 import axios from 'axios'
+import html2canvas from 'html2canvas'
+
 const BASE_URL = 'http://admin.dddog.com.cn/api/v1'
 export default {
   data() {
@@ -77,6 +79,23 @@ export default {
         })
       }).catch(() => {})
     },
+    handleSaveAsImage() {
+      const canvasEl = document.querySelector('#canvas')
+      const name = this.$store.state.name || 'peppa'
+      this.loading = true
+      html2canvas(canvasEl).then(canvas => {
+        canvas.toBlob(blob => {
+          const a = document.createElement('a')
+          a.download = `${name}.png`
+          a.href = window.URL.createObjectURL(blob)
+          a.click()
+          window.URL.revokeObjectURL(blob)
+        })
+      }).finally(() => {
+        this.loading = false
+      })
+
+    },
     getConfig(value) {
       this.loading = true
       axios.get(BASE_URL + '/getPeppa', {
@@ -118,6 +137,7 @@ export default {
           <el-button onClick={this.handleGetConfig} type="primary" icon="el-icon-sort">获取</el-button>
           <el-button onClick={this.handleSave} type="primary" icon="el-icon-document">保存</el-button>
           <el-button onClick={this.handleSaveAs} type="primary" icon="el-icon-document">另存为</el-button>
+          <el-button onClick={this.handleSaveAsImage} type="primary" icon="el-icon-document">另存为图片</el-button>
         </div>
         <div class={style['content-body']}>
           <canvas-wrap />

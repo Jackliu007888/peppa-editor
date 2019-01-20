@@ -12,6 +12,7 @@
     "deep-equal": "^1.0.1",
     "element-ui": "^2.4.11",
     "fastclick": "^1.0.6",
+    "html2canvas": "^1.0.0-alpha.12",
     "normalize.css": "^8.0.1",
     "rxjs": "^6.3.3",
     "uuid": "^3.3.2",
