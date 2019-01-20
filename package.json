@@ -1,6 +1,6 @@
 {
-  "name": "peppa-pig",
-  "version": "0.1.0",
+  "name": "peppa-editor",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -8,16 +8,29 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "vue": "^2.5.21"
+    "axios": "^0.18.0",
+    "deep-equal": "^1.0.1",
+    "element-ui": "^2.4.11",
+    "fastclick": "^1.0.6",
+    "normalize.css": "^8.0.1",
+    "rxjs": "^6.3.3",
+    "uuid": "^3.3.2",
+    "vue": "^2.5.21",
+    "vuedraggable": "^2.17.0",
+    "vuex": "^3.1.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.3.0",
-    "@vue/cli-plugin-eslint": "^3.3.0",
-    "@vue/cli-service": "^3.3.0",
+    "@vue/cli-plugin-babel": "^3.2.0",
+    "@vue/cli-plugin-eslint": "^3.2.0",
+    "@vue/cli-service": "^3.2.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.5.21"
+    "eslint-plugin-vue": "^5.0.0-0",
+    "postcss-import": "^12.0.1",
+    "postcss-url": "^8.0.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "vue-template-compiler": "^2.5.17"
   },
   "eslintConfig": {
     "root": true,
@@ -28,9 +41,50 @@
       "plugin:vue/essential",
       "eslint:recommended"
     ],
-    "rules": {},
     "parserOptions": {
       "parser": "babel-eslint"
+    },
+    "rules": {
+      "no-unused-vars": [
+        "error",
+        {
+          "argsIgnorePattern": "h|context"
+        }
+      ],
+      "generator-star-spacing": "off",
+      "no-debugger": "off",
+      "arrow-spacing": 2,
+      "indent": [
+        "error",
+        2,
+        {
+          "SwitchCase": 1
+        }
+      ],
+      "no-var": 2,
+      "semi": [
+        "error",
+        "never"
+      ],
+      "space-before-function-paren": [
+        "error",
+        {
+          "anonymous": "never",
+          "named": "never",
+          "asyncArrow": "always"
+        }
+      ],
+      "no-console": "off",
+      "eqeqeq": 2,
+      "space-in-parens": [
+        "error",
+        "never"
+      ],
+      "no-multiple-empty-lines": 2,
+      "eol-last": [
+        2,
+        "never"
+      ]
     }
   },
   "postcss": {

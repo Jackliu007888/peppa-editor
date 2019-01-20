@@ -1,0 +1,57 @@
+.setting-wrap
+  width 450px
+  box-sizing border-box
+  border-top 1px solid $borderColor
+  border-left 1px solid $borderColor
+  .title
+    height 40px
+    font-size 18px
+    border-bottom 1px solid $borderColor
+    display flex
+    align-items center
+    justify-content center
+  
+  .container
+    width 100%
+    box-sizing border-box
+    padding 20px
+    .no-selected
+      font-size 18px
+      text-align center
+      color #999999
+
+  .panel
+    display flex
+    box-sizing border-box
+    margin-bottom 20px
+    font-size 16px
+    .label
+      width 60px
+      height 40px
+      line-height 40px
+    .content
+      flex 1
+      .input-wrap
+        display flex
+      .radius-item
+        display flex
+        & + .radius-item
+          margin-top 15px
+
+        .radius-input
+          flex 1
+        .slide
+          margin-left 20px
+          width 100px
+      .color-setting
+        display flex
+        align-items center
+        .btn
+          margin-left 30px
+        
+      :global
+        .el-input+.el-input
+          margin-left 20px
+    
+
+       

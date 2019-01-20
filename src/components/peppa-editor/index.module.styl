@@ -1,0 +1,56 @@
+.peppa-editor-wrap
+  width 100%
+  height 100%
+  overflow hidden
+  background-color #ffffff
+  display flex
+  flex-direction column
+  font-size 20px
+  .header-bar
+    height 60px
+    width 100%
+    box-sizing border-box
+    padding 0 20px
+    display flex
+    align-items center
+    justify-content flex-end
+    border-bottom 1px solid $borderColor
+  .content-body
+    flex 1
+    display flex
+
+    .control-bar
+      width 56px
+      box-sizing border-box
+      border-top 1px solid $borderColor
+      border-left 1px solid $borderColor
+      display flex
+      flex-direction column
+      align-items center
+      padding 10px 0
+      .control-item
+        width 100%
+        height 55px
+        color #606266
+        font-size 14px
+        line-height 20px
+        cursor pointer
+        display flex
+        align-items center
+        justify-content center
+        flex-direction column
+        &.disabled
+          filter blur(1px)
+        img 
+          width 20px
+          height 20px
+          margin-bottom 4px  
+      .devide
+        width 100%
+        height 1px
+        background $borderColor
+        margin 8px 0
+   
+      
+
+
