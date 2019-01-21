@@ -41,8 +41,7 @@ export default {
     },
     handleSetTheSameThemeColor(key) {
       return () => {
-        const value = this.$store.state.present.themeColor
-        this.changeElementAttribute({key, value, id: this.selectedElementId})
+        this.changeElementAttribute({key, value: '$themeColor', id: this.selectedElementId})
       }
     },
     ...mapActions([
@@ -59,6 +58,7 @@ export default {
       </div>
     )
 
+    const themeColor = this.$store.state.present.themeColor
     const { name, width, height, left, top, borderWidth, borderValue, rotate, borderColor, backgroundColor } = this.selectedElement
     const [a, b, c, d, e, f, g, i] = borderValue
     
@@ -178,7 +178,7 @@ export default {
                   '#241f51'
                 ]}
                 onInput={this.handleInputChange('borderColor')}
-                value={borderColor} />
+                value={borderColor === '$themeColor' ? themeColor : borderColor} />
               <el-button onClick={this.handleSetTheSameThemeColor('borderColor')} class={style['btn']} size="medium">设为背景色</el-button>
             </div>
           </panel>
@@ -193,7 +193,7 @@ export default {
                   '#241f51'
                 ]}
                 onInput={this.handleInputChange('backgroundColor')}
-                value={backgroundColor} />
+                value={backgroundColor === '$themeColor' ? themeColor : backgroundColor} />
               <el-button onClick={this.handleSetTheSameThemeColor('backgroundColor')}  class={style['btn']} size="medium">设为背景色</el-button>
             </div>
           </panel>

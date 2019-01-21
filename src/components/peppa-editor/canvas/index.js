@@ -95,8 +95,8 @@ export default {
       }
       const itemStyle = {
         ...wrapStyle,
-        backgroundColor,
-        borderColor,
+        backgroundColor: backgroundColor === '$themeColor' ? themeColor : backgroundColor,
+        borderColor: borderColor === '$themeColor' ? themeColor : borderColor,
         borderStyle: 'solid',
         boxSizing: 'border-box',
         borderWidth: borderWidth + 'px',
